@@ -50,7 +50,6 @@ a {
     display: flex;
     flex-direction: column;
     text-align: center;
-    transition: height .8s, width .8s;
     transition: transform 0.5s;
 }
 
