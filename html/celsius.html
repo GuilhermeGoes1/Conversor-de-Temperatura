@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" href="favico.png">
+    <link rel="icon" type="image/png" href="../ico/favico.png">
 </head>
 
 <body>
@@ -19,8 +19,8 @@
             <div class="parte-cima">
                 <h1>Insira a temperatura em Celsius</h1>
                 <input type="number" placeholder="temperatura em Celsius" id="entrada-celsius"
-                    oninput="converterTemp()">
-                <input type="range" min="-273.15" max="200" oninput="converterTemp(), rolagemSim()" id="rolagem"
+                    oninput="converterCelsius()">
+                <input type="range" min="-273.15" max="200" oninput="converterCelsius(), rolagemCelsius()" id="rolagem"
                     class="styled-slider slider-progress">
             </div>
             <div class="parte-baixo">
@@ -37,7 +37,7 @@
         </div>
     </main>
 
-    <script src="../js/celsius.js"></script>
+    <script src="../index.js"></script>
 </body>
 
 </html>

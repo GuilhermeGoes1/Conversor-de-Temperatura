@@ -1,4 +1,4 @@
-function converterTemp() {
+function converterCelsius() {
     var entradaCelsius = document.getElementById("entrada-celsius")
     var saidaFahrenheit = document.getElementById("saida-fahrenheit")
     var saidaKelvin = document.getElementById("saida-kelvin")
@@ -21,12 +21,80 @@ function converterTemp() {
     }
 }
 
-function rolagemSim() {
+function converterFahrenheit() {
+    var entradaFahrenheit = document.getElementById("entrada-fahrenheit")
+    var saidaCelsius = document.getElementById("saida-celsius")
+    var saidaKelvin = document.getElementById("saida-kelvin")
+
+    if (entradaFahrenheit.value !== "") {
+        if (!isNaN(entradaFahrenheit.value)) {
+            var fahrenheit = parseFloat(entradaFahrenheit.value)
+            var celsius = ((fahrenheit - 32) * 5 / 9)
+            var kelvin = (celsius + 273.15)
+
+            saidaCelsius.textContent = celsius.toFixed(2) + " °C"
+            saidaKelvin.textContent = kelvin.toFixed(2) + " K"
+        } else {
+            saidaCelsius.textContent = "-"
+            saidaKelvin.textContent = "-"
+        }
+    } else {
+        saidaCelsius.textContent = "-"
+        saidaKelvin.textContent = "-"
+    }
+}
+
+function converterKelvin() {
+    var entradaKelvin = document.getElementById("entrada-kelvin")
+    var saidaCelsius = document.getElementById("saida-celsius")
+    var saidaFahrenheit = document.getElementById("saida-fahrenheit")
+
+    if (entradaKelvin.value !== "") {
+        if (!isNaN(entradaKelvin.value)) {
+            var kelvin = parseFloat(entradaKelvin.value)
+            var celsius = (kelvin - 273.15)
+            var fahrenheit = (((celsius) * 9 / 5) + 32)
+
+            saidaCelsius.textContent = celsius.toFixed(2) + " °C"
+            saidaFahrenheit.textContent = fahrenheit.toFixed(2) + " °F"
+        } else {
+            saidaCelsius.textContent = "-"
+            saidaFahrenheit.textContent = "-"
+        }
+    } else {
+        saidaCelsius.textContent = "-"
+        saidaFahrenheit.textContent = "-"
+    }
+}
+
+function rolagemCelsius() {
     var entradaCelsius = document.getElementById("entrada-celsius")
     var rolagem = (document.getElementById("rolagem")).value
 
     entradaCelsius.value = rolagem
-    converterTemp()
+    converterCelsius()
 }
 
+function rolagemFahrenheit() {
+    var entradaFahrenheit = document.getElementById("entrada-fahrenheit")
+    var rolagem = (document.getElementById("rolagem")).value
+
+    entradaFahrenheit.value = rolagem
+    converterFahrenheit()
+}
+
+function rolagemKelvin() {
+    var entradaKelvin = document.getElementById("entrada-kelvin")
+    var rolagem = (document.getElementById("rolagem")).value
+
+    entradaKelvin.value = rolagem
+    converterKelvin()
+}
+
+for (let e of document.querySelectorAll('input[type="range"].slider-progress')) {
+    e.style.setProperty('--value', e.value);
+    e.style.setProperty('--min', e.min == '' ? '0' : e.min);
+    e.style.setProperty('--max', e.max == '' ? '100' : e.max);
+    e.addEventListener('input', () => e.style.setProperty('--value', e.value));
+}
 

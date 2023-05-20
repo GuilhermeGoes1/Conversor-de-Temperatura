@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" href="favico.png">
+    <link rel="icon" type="image/png" href="../ico/favico.png">
 </head>
 
 <body>
@@ -18,8 +18,9 @@
         <div class="caixa">
             <div class="parte-cima">
                 <h1>Insira a temperatura em Kelvin</h1>
-                <input type="number" placeholder="temperatura em Kelvin" id="entrada-kelvin" oninput="converterTemp()">
-                <input type="range" min="0" max="500" id="rolagem" oninput="converterTemp(), rolagemSim()"
+                <input type="number" placeholder="temperatura em Kelvin" id="entrada-kelvin"
+                    oninput="converterKelvin()">
+                <input type="range" min="0" max="500" id="rolagem" oninput="converterKelvin(), rolagemKelvin()"
                     class="styled-slider slider-progress">
             </div>
             <div class="parte-baixo">
@@ -36,7 +37,7 @@
         </div>
     </main>
 
-    <script src="../js/kelvin.js"></script>
+    <script src="../index.js"></script>
 </body>
 
 </html>

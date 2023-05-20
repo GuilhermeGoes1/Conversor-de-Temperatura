@@ -9,19 +9,19 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 90px;
+    margin-bottom: 11.5vh;
 }
 
 h1 {
-    padding-top: 45px;
-    padding-bottom: 30px;
-    font-size: 50px;
+    padding-top: 5.7vh;
+    padding-bottom: 3.5vh;
+    font-size: 3.3vw;
     color: rgb(78, 178, 78);
 }
 
 h3 {
-    padding-bottom: 20px;
-    font-size: 30px;
+    padding-bottom: 2.8vh;
+    font-size: 1.95vw;
 }
 
 body {
@@ -39,7 +39,6 @@ main a {
     width: 22vw;
     display: flex;
     justify-content: center;
-    font-size: 40px;
     text-decoration: none;
     color: black;
 }
@@ -54,7 +53,7 @@ a {
 }
 
 .temp-caixa:nth-of-type(-n+2) a {
-    margin-right: 35px;
+    margin-right: 2.3vw;
 }
 
 a:hover {
@@ -65,12 +64,12 @@ a:hover {
 }
 
 h5 {
-    font-size: 40px;
+    font-size: 2.6vw;
 }
 
 .texto-caixa {
     margin-top: 10vh;
     margin-bottom: 10vh;
-    font-size: 25px;
-    padding: 4px;
+    font-size: 1.63vw;
+    padding: .6vh .6vw .6vh .6vw;
 }
