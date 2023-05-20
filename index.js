@@ -1,23 +1,23 @@
 function converterCelsius() {
-    var entradaCelsius = document.getElementById("entrada-celsius")
-    var saidaFahrenheit = document.getElementById("saida-fahrenheit")
-    var saidaKelvin = document.getElementById("saida-kelvin")
+    var entradaCelsius = document.getElementById("entrada-celsius");
+    var saidaFahrenheit = document.getElementById("saida-fahrenheit");
+    var saidaKelvin = document.getElementById("saida-kelvin");
 
     if (entradaCelsius.value !== "") {
         if (!isNaN(entradaCelsius.value)) {
-            var celsius = parseFloat(entradaCelsius.value)
-            var fahrenheit = ((celsius * 9 / 5) + 32)
-            var kelvin = (celsius + 273.15)
+            var celsius = parseFloat(entradaCelsius.value);
+            var fahrenheit = ((celsius * 9 / 5) + 32);
+            var kelvin = (celsius + 273.15);
 
-            saidaFahrenheit.textContent = fahrenheit.toFixed(2) + " °F"
-            saidaKelvin.textContent = kelvin.toFixed(2) + " K"
+            saidaFahrenheit.textContent = formatarTemperatura(fahrenheit) + " °F";
+            saidaKelvin.textContent = formatarTemperatura(kelvin) + " K";
         } else {
-            saidaFahrenheit.textContent = "-"
-            saidaKelvin.textContent = "-"
+            saidaFahrenheit.textContent = "-";
+            saidaKelvin.textContent = "-";
         }
     } else {
-        saidaFahrenheit.textContent = "-"
-        saidaKelvin.textContent = "-"
+        saidaFahrenheit.textContent = "-";
+        saidaKelvin.textContent = "-";
     }
 }
 
@@ -32,8 +32,8 @@ function converterFahrenheit() {
             var celsius = ((fahrenheit - 32) * 5 / 9)
             var kelvin = (celsius + 273.15)
 
-            saidaCelsius.textContent = celsius.toFixed(2) + " °C"
-            saidaKelvin.textContent = kelvin.toFixed(2) + " K"
+            saidaCelsius.textContent = formatarTemperatura(celsius) + " °C"
+            saidaKelvin.textContent = formatarTemperatura(kelvin) + " K"
         } else {
             saidaCelsius.textContent = "-"
             saidaKelvin.textContent = "-"
@@ -55,8 +55,8 @@ function converterKelvin() {
             var celsius = (kelvin - 273.15)
             var fahrenheit = (((celsius) * 9 / 5) + 32)
 
-            saidaCelsius.textContent = celsius.toFixed(2) + " °C"
-            saidaFahrenheit.textContent = fahrenheit.toFixed(2) + " °F"
+            saidaCelsius.textContent = formatarTemperatura(celsius) + " °C"
+            saidaFahrenheit.textContent = formatarTemperatura(fahrenheit) + " °F"
         } else {
             saidaCelsius.textContent = "-"
             saidaFahrenheit.textContent = "-"
@@ -64,6 +64,14 @@ function converterKelvin() {
     } else {
         saidaCelsius.textContent = "-"
         saidaFahrenheit.textContent = "-"
+    }
+}
+
+function formatarTemperatura(valor) {
+    if (Math.abs(valor) >= 1e7) {
+        return valor.toExponential(3);
+    } else {
+        return valor.toFixed(2);
     }
 }
 
@@ -90,6 +98,8 @@ function rolagemKelvin() {
     entradaKelvin.value = rolagem
     converterKelvin()
 }
+
+
 
 for (let e of document.querySelectorAll('input[type="range"].slider-progress')) {
     e.style.setProperty('--value', e.value);
