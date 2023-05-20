@@ -20,8 +20,9 @@
                 <h1>Insira a temperatura em Celsius</h1>
                 <input type="number" placeholder="temperatura em Celsius" id="entrada-celsius"
                     oninput="converterCelsius()">
-                <input type="range" min="-273.15" max="200" oninput="converterCelsius(), rolagemCelsius()" id="rolagem"
-                    class="styled-slider slider-progress" step="any">
+                <input type="range" min="-273.15" max="200"
+                    oninput="converterCelsius(), rolagemCelsius(), formatarRolagem(valor.value)" id="rolagem"
+                    class="styled-slider slider-progress" step="0.01">
             </div>
             <div class="parte-baixo">
                 <div class="caixa-temp">
