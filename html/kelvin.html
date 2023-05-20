@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor</title>
+    <link rel="stylesheet" href="../css/temperaturas.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="favico.png">
+</head>
+
+<body>
+    <main>
+        <div class="caixa">
+            <div class="parte-cima">
+                <h1>Insira a temperatura em Kelvin</h1>
+                <input type="number" placeholder="temperatura em Kelvin" id="entrada-kelvin" oninput="converterTemp()">
+                <input type="range" min="0" max="500" id="rolagem" oninput="converterTemp(), rolagemSim()">
+            </div>
+            <div class="parte-baixo">
+                <div class="caixa-temp">
+                    <h3>Celsius</h3>
+                    <span id="saida-celsius">-</span>
+                </div>
+                <div class="caixa-temp">
+                    <h3>Fahrenheit</h3>
+                    <span id="saida-fahrenheit">-</span>
+                </div>
+            </div>
+            <div class="botao-voltar"><a href="../index.html">Voltar</a></div>
+        </div>
+    </main>
+
+    <script src="../js/kelvin.js"></script>
+</body>
+
+</html>
