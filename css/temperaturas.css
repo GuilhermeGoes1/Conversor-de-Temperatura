@@ -93,12 +93,14 @@ a {
     border-radius: 2vh;
     padding: .8vh .8vw .8vh .8vw;
     background-color: rgb(78, 178, 78);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 a:hover {
     background-color: rgb(62, 148, 62);
     transition: .5s;
     color: rgb(238, 237, 237);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
 }
 
 .botao-voltar {
@@ -138,7 +140,7 @@ input[type=range].styled-slider::-webkit-slider-thumb {
     border-radius: 1em;
     background: linear-gradient(to right, #4EB24E, #008E00);
     border: none;
-    box-shadow: 0 0 2px #000000;
+    box-shadow: 1px 1px 2px 1px #323232;
     margin-top: calc(max((1em - 1px - 1px) * 0.5, 0px) - 1.5em * 0.5);
 }
 
@@ -147,7 +149,7 @@ input[type=range].styled-slider::-webkit-slider-runnable-track {
     border: 1px solid #b2b2b2;
     border-radius: 0.5em;
     background: #EFEFEF;
-    box-shadow: none;
+    box-shadow: 1px 1px 1px #505050;
 }
 
 input[type=range].styled-slider::-webkit-slider-thumb:hover {
@@ -187,7 +189,7 @@ input[type=range].styled-slider::-moz-range-thumb {
     border-radius: 1em;
     background: linear-gradient(to right, #4EB24E, #008E00);
     border: none;
-    box-shadow: 0 0 2px #000000;
+    box-shadow: 1px 1px 2px 1px #323232;
 }
 
 input[type=range].styled-slider::-moz-range-track {
@@ -195,7 +197,7 @@ input[type=range].styled-slider::-moz-range-track {
     border: 1px solid #b2b2b2;
     border-radius: 0.5em;
     background: #EFEFEF;
-    box-shadow: none;
+    box-shadow: 1px 1px 1px #505050;
 }
 
 input[type=range].styled-slider::-moz-range-thumb:hover {
@@ -245,7 +247,7 @@ input[type=range].styled-slider::-ms-thumb {
     border-radius: 1em;
     background: linear-gradient(to right, #4EB24E, #008E00);
     border: none;
-    box-shadow: 0 0 2px #000000;
+    box-shadow: 1px 1px 2px 1px #323232;
     margin-top: 0;
     box-sizing: border-box;
 }
@@ -255,7 +257,7 @@ input[type=range].styled-slider::-ms-track {
     border-radius: 0.5em;
     background: #EFEFEF;
     border: 1px solid #b2b2b2;
-    box-shadow: none;
+    box-shadow: 1px 1px 1px #505050;
     box-sizing: border-box;
 }
 
