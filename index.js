@@ -90,7 +90,7 @@ function rolagemFahrenheit() {
 
     entradaFahrenheit.value = rolagem
     converterFahrenheit()
-    alterarCorDeFundoF()
+    alterarCorDeFundo()
 }
 
 function rolagemKelvin() {
@@ -99,7 +99,7 @@ function rolagemKelvin() {
 
     entradaKelvin.value = rolagem
     converterKelvin()
-    alterarCorDeFundoK()
+    alterarCorDeFundo()
 }
 
 for (let e of document.querySelectorAll('input[type="range"].slider-progress')) {
@@ -116,49 +116,37 @@ function alterarCorDeFundoC() {
     if (isNaN(numero) || inputNumero.value === "") {
         document.body.style.backgroundColor = "whitesmoke";
         return; // Retorna imediatamente se o valor for NaN ou vazio
+    } else {
+        var red = Math.round((numero / 36) * 255);
+        var blue = Math.round((1 - numero / 36) * 255);
+
+        red = Math.min(red, 205);
+        blue = Math.min(blue, 180);
+
+        var color = "rgb(" + red + ", 0, " + blue + ")";
+        document.body.style.backgroundColor = color;
+    }
+}
+
+
+function alterarCorDeFundo() {
+    var spanCelsius = document.getElementById("saida-celsius");
+    var numero = parseFloat(spanCelsius.textContent);
+
+    if (isNaN(numero)) {
+        document.body.style.backgroundColor = "whitesmoke";
+        return; // Retorna imediatamente se o valor for NaN
     }
 
     var red = Math.round((numero / 36) * 255);
     var blue = Math.round((1 - numero / 36) * 255);
 
-    var color = "rgb(" + red + ", 0, " + blue + ")";
-    document.body.style.backgroundColor = color;
-}
-
-function alterarCorDeFundoF() {
-    var inputNumero = document.getElementById("entrada-fahrenheit")
-    var numero = parseInt(inputNumero.value);
-
-    if (isNaN(numero) || inputNumero.value === "") {
-        document.body.style.backgroundColor = "whitesmoke";
-        return; // Retorna imediatamente se o valor for NaN ou vazio
-    }
-
-    var red = Math.round((numero / 95) * 255);
-    var blue = Math.round((1 - numero / 95) * 255);
+    red = Math.min(red, 205);
+    blue = Math.min(blue, 180);
 
     var color = "rgb(" + red + ", 0, " + blue + ")";
     document.body.style.backgroundColor = color;
 }
-
-function alterarCorDeFundoK() {
-    var inputNumero = document.getElementById("entrada-kelvin")
-    var numero = parseInt(inputNumero.value);
-
-    if (isNaN(numero) || inputNumero.value === "") {
-        document.body.style.backgroundColor = "whitesmoke";
-        return; // Retorna imediatamente se o valor for NaN ou vazio
-    }
-
-    var red = Math.round((numero / 385) * 255);
-    var blue = Math.round((1 - numero / 385) * 255);
-
-    var color = "rgb(" + red + ", 0, " + blue + ")";
-    document.body.style.backgroundColor = color;
-}
-
-
-
 
 
 
