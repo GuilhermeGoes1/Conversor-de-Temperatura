@@ -114,7 +114,7 @@ a:hover {
     padding-right: 2vw;
 }
 
-.on {
+button.on {
     margin-left: 2vw;
     font-size: 1.1vw;
     text-decoration: none;
@@ -127,7 +127,7 @@ a:hover {
     cursor: pointer;
 }
 
-.on:hover {
+button.on:hover {
     background-color: rgb(62, 148, 62);
     transition: .5s;
     color: rgb(238, 237, 237);
