@@ -110,9 +110,51 @@ a:hover {
 .botao-voltar {
     width: 100%;
     display: flex;
-    justify-content: right;
+    justify-content: space-between;
     padding-right: 2vw;
 }
+
+.on {
+    margin-left: 2vw;
+    font-size: 1.1vw;
+    text-decoration: none;
+    color: white;
+    border: 1px solid black;
+    border-radius: 2vh;
+    padding: .8vh .8vw .8vh .8vw;
+    background-color: rgb(78, 178, 78);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+.on:hover {
+    background-color: rgb(62, 148, 62);
+    transition: .5s;
+    color: rgb(238, 237, 237);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+}
+
+button.off {
+    background-color: rgb(235, 66, 66);
+    font-size: 1.1vw;
+    text-decoration: none;
+    color: white;
+    border: 1px solid black;
+    border-radius: 2vh;
+    padding: .8vh .8vw .8vh .8vw;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+button.off:hover {
+    background-color: rgb(205, 64, 64);
+    transition: .5s;
+    color: rgb(238, 237, 237);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+}
+
 
 input[type="range"]::-webkit-slider-thumb {
     cursor: pointer;

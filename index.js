@@ -112,8 +112,9 @@ for (let e of document.querySelectorAll('input[type="range"].slider-progress')) 
 function alterarCorDeFundoC() {
     var inputNumero = document.querySelector("input[type='number']");
     var numero = parseInt(inputNumero.value);
+    var botao = document.querySelector("#botao")
 
-    if (isNaN(numero) || inputNumero.value === "") {
+    if (isNaN(numero) || inputNumero.value === "" || botao.textContent === "Cor de fundo Off") {
         document.body.style.backgroundColor = "whitesmoke";
         return; // Retorna imediatamente se o valor for NaN ou vazio
     } else {
@@ -132,20 +133,34 @@ function alterarCorDeFundoC() {
 function alterarCorDeFundo() {
     var spanCelsius = document.getElementById("saida-celsius");
     var numero = parseFloat(spanCelsius.textContent);
+    var botao = document.querySelector("#botao")
 
-    if (isNaN(numero)) {
+    if (isNaN(numero) || spanCelsius.value === "" || botao.textContent === "Cor de fundo Off") {
         document.body.style.backgroundColor = "whitesmoke";
         return; // Retorna imediatamente se o valor for NaN
+    } else {
+
+        var red = Math.round((numero / 36) * 255);
+        var blue = Math.round((1 - numero / 36) * 255);
+
+        red = Math.min(red, 205);
+        blue = Math.min(blue, 180);
+
+        var color = "rgb(" + red + ", 0, " + blue + ")";
+        document.body.style.backgroundColor = color;
     }
+}
 
-    var red = Math.round((numero / 36) * 255);
-    var blue = Math.round((1 - numero / 36) * 255);
+function botao() {
+    var button = document.getElementById("botao");
 
-    red = Math.min(red, 205);
-    blue = Math.min(blue, 180);
-
-    var color = "rgb(" + red + ", 0, " + blue + ")";
-    document.body.style.backgroundColor = color;
+    if (button.textContent === "Cor de fundo On") {
+        button.textContent = "Cor de fundo Off";
+        button.classList.add("off"); // Adiciona a classe "off" ao botão
+    } else {
+        button.textContent = "Cor de fundo On";
+        button.classList.remove("off"); // Remove a classe "off" do botão
+    }
 }
 
 
