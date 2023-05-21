@@ -107,7 +107,7 @@ function alterarCorDeFundoC() {
         var blue = Math.round((1 - numero / 36) * 255)
 
         red = Math.min(red, 180)
-        blue = Math.min(blue, 165)
+        blue = Math.min(blue, 162)
 
         var color = "rgb(" + red + ", 0, " + blue + ")"
         document.body.style.backgroundColor = color
@@ -127,8 +127,8 @@ function alterarCorDeFundo() {
         var red = Math.round((numero / 36) * 255)
         var blue = Math.round((1 - numero / 36) * 255)
 
-        red = Math.min(red, 205)
-        blue = Math.min(blue, 180)
+        red = Math.min(red, 180)
+        blue = Math.min(blue, 162)
 
         var color = "rgb(" + red + ", 0, " + blue + ")"
         document.body.style.backgroundColor = color
