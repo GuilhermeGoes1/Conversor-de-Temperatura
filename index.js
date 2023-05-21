@@ -81,6 +81,7 @@ function rolagemCelsius() {
 
     entradaCelsius.value = rolagem
     converterCelsius()
+    alterarCorDeFundoC()
 }
 
 function rolagemFahrenheit() {
@@ -89,6 +90,7 @@ function rolagemFahrenheit() {
 
     entradaFahrenheit.value = rolagem
     converterFahrenheit()
+    alterarCorDeFundoF()
 }
 
 function rolagemKelvin() {
@@ -97,6 +99,7 @@ function rolagemKelvin() {
 
     entradaKelvin.value = rolagem
     converterKelvin()
+    alterarCorDeFundoK()
 }
 
 for (let e of document.querySelectorAll('input[type="range"].slider-progress')) {
@@ -105,4 +108,60 @@ for (let e of document.querySelectorAll('input[type="range"].slider-progress')) 
     e.style.setProperty('--max', e.max == '' ? '100' : e.max);
     e.addEventListener('input', () => e.style.setProperty('--value', e.value));
 }
+
+function alterarCorDeFundoC() {
+    var inputNumero = document.querySelector("input[type='number']");
+    var numero = parseInt(inputNumero.value);
+
+    if (isNaN(numero) || inputNumero.value === "") {
+        document.body.style.backgroundColor = "whitesmoke";
+        return; // Retorna imediatamente se o valor for NaN ou vazio
+    }
+
+    var red = Math.round((numero / 36) * 255);
+    var blue = Math.round((1 - numero / 36) * 255);
+
+    var color = "rgb(" + red + ", 0, " + blue + ")";
+    document.body.style.backgroundColor = color;
+}
+
+function alterarCorDeFundoF() {
+    var inputNumero = document.getElementById("entrada-fahrenheit")
+    var numero = parseInt(inputNumero.value);
+
+    if (isNaN(numero) || inputNumero.value === "") {
+        document.body.style.backgroundColor = "whitesmoke";
+        return; // Retorna imediatamente se o valor for NaN ou vazio
+    }
+
+    var red = Math.round((numero / 95) * 255);
+    var blue = Math.round((1 - numero / 95) * 255);
+
+    var color = "rgb(" + red + ", 0, " + blue + ")";
+    document.body.style.backgroundColor = color;
+}
+
+function alterarCorDeFundoK() {
+    var inputNumero = document.getElementById("entrada-kelvin")
+    var numero = parseInt(inputNumero.value);
+
+    if (isNaN(numero) || inputNumero.value === "") {
+        document.body.style.backgroundColor = "whitesmoke";
+        return; // Retorna imediatamente se o valor for NaN ou vazio
+    }
+
+    var red = Math.round((numero / 385) * 255);
+    var blue = Math.round((1 - numero / 385) * 255);
+
+    var color = "rgb(" + red + ", 0, " + blue + ")";
+    document.body.style.backgroundColor = color;
+}
+
+
+
+
+
+
+//var inputNumero = document.querySelector("input[type='number']");
+
 

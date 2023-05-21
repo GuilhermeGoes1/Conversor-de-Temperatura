@@ -304,3 +304,7 @@ input[type=range].styled-slider.slider-progress:active::-ms-fill-lower {
 input[type="range"] {
     background-color: transparent;
 }
+
+body {
+    transition: background-color 0.5s;
+}
