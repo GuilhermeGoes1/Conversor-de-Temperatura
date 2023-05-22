@@ -95,8 +95,8 @@ for (let e of document.querySelectorAll('input[type="range"].slider-progress')) 
 }
 
 function alterarCorDeFundoC() {
-    var inputNumero = document.querySelector("input[type='number']");
-    var numero = parseInt(inputNumero.value);
+    var inputNumero = document.querySelector("input[type='number']")
+    var numero = parseInt(inputNumero.value)
     var botao = document.querySelector("#botao")
 
     if (isNaN(numero) || inputNumero.value === "" || botao.textContent === "Cor de fundo Off") {
