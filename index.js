@@ -3,7 +3,7 @@ function converterCelsius() {
     var saidaFahrenheit = document.getElementById("saida-fahrenheit")
     var saidaKelvin = document.getElementById("saida-kelvin")
 
-    if (!isNaN(entradaCelsius.value) && entradaCelsius.value !== "") {
+    if (entradaCelsius.value !== "") {
         var celsius = parseFloat(entradaCelsius.value)
         var fahrenheit = ((celsius * 9 / 5) + 32)
         var kelvin = (celsius + 273.15)
@@ -21,7 +21,7 @@ function converterFahrenheit() {
     var saidaCelsius = document.getElementById("saida-celsius")
     var saidaKelvin = document.getElementById("saida-kelvin")
 
-    if (!isNaN(entradaFahrenheit.value) && entradaFahrenheit.value !== "") {
+    if (entradaFahrenheit.value !== "") {
         var fahrenheit = parseFloat(entradaFahrenheit.value)
         var celsius = ((fahrenheit - 32) * 5 / 9)
         var kelvin = (celsius + 273.15)
@@ -39,7 +39,7 @@ function converterKelvin() {
     var saidaCelsius = document.getElementById("saida-celsius")
     var saidaFahrenheit = document.getElementById("saida-fahrenheit")
 
-    if (!isNaN(entradaKelvin.value) && entradaKelvin.value !== "") {
+    if (entradaKelvin.value !== "") {
         var kelvin = parseFloat(entradaKelvin.value)
         var celsius = (kelvin - 273.15)
         var fahrenheit = (((celsius) * 9 / 5) + 32)
@@ -87,6 +87,7 @@ function rolagemKelvin() {
     alterarCorDeFundo()
 }
 
+// codigo do input type range
 for (let e of document.querySelectorAll('input[type="range"].slider-progress')) {
     e.style.setProperty('--value', e.value)
     e.style.setProperty('--min', e.min == '' ? '0' : e.min)
@@ -99,7 +100,7 @@ function alterarCorDeFundoC() {
     var numero = parseInt(inputNumero.value)
     var botao = document.querySelector("#botao")
 
-    if (isNaN(numero) || inputNumero.value === "" || botao.textContent === "Cor de fundo Off") {
+    if (inputNumero.value === "" || botao.textContent === "Cor de fundo Off") {
         document.body.style.backgroundColor = "whitesmoke"
         return
     } else {
@@ -119,7 +120,7 @@ function alterarCorDeFundo() {
     var numero = parseFloat(spanCelsius.textContent)
     var botao = document.querySelector("#botao")
 
-    if (isNaN(numero) || spanCelsius.value === "" || botao.textContent === "Cor de fundo Off") {
+    if (spanCelsius.value === "" || botao.textContent === "Cor de fundo Off") {
         document.body.style.backgroundColor = "whitesmoke"
         return
     } else {
